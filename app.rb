@@ -19,7 +19,7 @@ class TicTacToe
         if self.p1 == player
             @board[position1][position2] = 'X'
         else
-            [position1][position2] = 'O'
+            @board[position1][position2] = 'O'
         end
 
         @board.each {|row| p row}
@@ -88,6 +88,19 @@ class TicTacToe
         unless winner==''
             puts "The winner is #{winner}!"
         end
+        
+        total_rounds = 0
+        flat_board.each do |elem|
+            if elem=='O' or elem=='X'
+                total_rounds+=1
+            end
+        end
+
+        if total_rounds == 9
+            winner = 0
+            puts "The game is a draw!"
+        end
+
     end
 
 
@@ -95,3 +108,13 @@ end
 
 
 t = TicTacToe.new('Rafa', 'Jon')
+
+t.play_round('Rafa', 0, 2)
+t.play_round('Jon', 1, 1)
+t.play_round('Rafa', 0, 0)
+t.play_round('Jon', 0, 1)
+t.play_round('Rafa', 2, 1)
+t.play_round('Jon', 1, 2)
+t.play_round('Rafa', 1, 0)
+t.play_round('Jon', 2, 0)
+t.play_round('Rafa', 2, 2)
