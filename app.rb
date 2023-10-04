@@ -125,8 +125,8 @@ class TicTacToe
         ]
     end
 
-    def play_round(position1, position2)
-        if self.p1 == true
+    def play_round(player, position1, position2)
+        if self.p1 == player
             @board[position1][position2] = 'X'
         else
             [position1][position2] = 'O'
@@ -167,5 +167,9 @@ end
 
 
 t = TicTacToe.new('Rafa', 'Jon')
-puts t.p1
-puts t.p2
+p t.p1
+p t.p2
+
+t.play_round('Rafa', 0, 0)
+t.play_round('Rafa', 0, 1)
+t.play_round('Rafa', 0, 2)
