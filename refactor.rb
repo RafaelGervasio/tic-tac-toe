@@ -18,3 +18,19 @@ module Board
     def game_over
         #code
     end
+
+module Players
+    
+    attr_reader :p1
+    attr_reader :p2
+
+    def create_player
+        puts "What's your name?"
+        reply = gets.chomp
+        if !!p1 == false
+            p1 = reply
+        else
+            p2 = reply
+        end
+    end
+end
