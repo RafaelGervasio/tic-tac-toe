@@ -1,7 +1,3 @@
-#TODO
-#Make it into a command line game
-
-
 class TicTacToe
     attr_reader :p1, :p2
     
